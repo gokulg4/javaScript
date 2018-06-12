@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Style Sheet (CSS) basics and why JQuery</title>
+
+</script>
+
+<!--03. Create the Style-->
+<style>        
+
+   /* this will make all the 5 div's in the html document with red border
+       here we did not specify which div, the representation is common hence the style
+       is applied to all the div's in the html document */
+
+   /* div { border: solid 1px red; } */
+
+   /* lets assume a scenarion where we need the style to be applied 
+       only for the first and the last div in the html document */
+
+   /* div:first-child { border: solid 1px red; } */
+   /* div:last-child { border: solid 1px red; } */
+   /* above two CSS styles are not working */
+
+   /* in the above cases it was easy to identify the first and last element of the 
+       html document. Assume a scenario we need to target the 3rd div. In CSS implementing  
+       this is very hard and huge lines of code */
+   /* div:nth-child(2) { border: solid 1px red; } */
+
+   /* : (dot) . represents the class and (hash) # represents the id all the above 
+       conditions are independent of name but the below is name specific */
+   div.third { border: sold 1px red; }
+
+   /* now comes the real scenario, if we need to replace the text in 
+       second div -- div2. With css it is not possible. CSS scope is only to design the document
+       and not to modify a document (we can add design to a document but not modify the document)
+       For modifying the document we have javascript
+      they why jQuery, in javascript if we write 10 lines with jQuery the same can be 
+       achieved in 1 line */
+
+</style>
+
+</head>
+<body>
+    <!--01.Create 05 div's-->
+
+    <div>div 1</div>
+    <div>div 2</div>
+    <div class="third">div 3</div>
+    <div>div 4</div>
+    <div>div 5</div>
+    
+</body>
+</html>

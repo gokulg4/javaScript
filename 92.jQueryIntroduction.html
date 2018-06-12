@@ -1,0 +1,101 @@
+<!-- Use ! + <tab> key to get the html template structure -->
+<!-- Date: 12-Jun-2018 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduction to JQuery </title>
+
+    <!--Method #01 -->
+    <!--Calling JQuery external reference-->
+    <script src="jQuery/jquery-3.3.1.min.js"></script>
+
+    <!--Method #02 -->
+     <!--If cloud CDN is unavailable use the local js file-->   
+     <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
+     <script>
+     if (typeof jQuery == 'undefined') {
+         document.write(unescape("%3Cscript src='jQuery/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+     }
+     </script> -->
+
+     <!--03. Create the Style-->
+     <style>        
+      
+        /* now comes the real scenario, if we need to replace the text in 
+            second div -- div2. With css it is not possible. CSS scope is only to design the document
+            and not to modify a document (we can add design to a document but not modify the document)
+            For modifying the document we have javascript
+           they why jQuery, in javascript if we write 10 lines with jQuery the same can be 
+            achieved in 1 line */
+
+     </style>
+
+     <!--04. Basic Knowledge about HTML element-->
+     <!--
+         As far a HTML is concerned in the HTML document below div, button, script, head are all 
+         elements.
+         For eg. inside the head elment we have meta (or metadata) as another element
+         charset="UTF-8" is the attribute or property of the meta data element
+     -->
+</head>
+<body>
+    
+    <!--01.Create 05 div's-->
+    <div>div 1</div>    
+    <div>div 2</div> 
+    <div class="third">div 3</div>  
+    <div>div 4</div>
+    <div>div 5</div>
+    
+    <br />    
+    <button>Text Me</button>
+
+    <script>
+        /* Introduction:
+           -------------
+           01. JQuery is pure java script, calling any predefined function/method will internal call 
+            the java script code which is already written in jQuery
+           02. In other terms JQuery is the simplified version of JavaScript
+           03. One of the library of JavaScript is JQuery, similarly another library of JavaScript 
+            is React, another library is Angular JS, etc.. 
+           04. “the library that is written using java script is JQuery”. Every thing in JQuery is pure 
+            javascript, $. will call the javascript code
+           05. The library of javascript is JQuery, another library of javascript is react, another
+            library of javascript is angular js */
+
+        //this will make red border for all the div's the given html document
+        $('div').css('border', 'solid 1px red');
+
+        //if we want to make the border red for the div having the class as 'third' the html document
+        $('div.third').css('border', 'solid 1px red');
+
+        //In the above examples we have modified the design of the div (html element), the main
+        // functionality of jQuery is to modify/manipulate the values and not the design of
+        // the document
+
+        //the value inside div3 is 'div 3', let modify the value using jQuery
+        $('div.third').text("I'm changed");
+
+        //an element in jQuery must be selected as below
+        //$('') // this is selector in jQuery
+
+        //to call a class selector in jQuery
+        //$('.className')
+
+        //to call an id selector in jQuery
+        //$('.#idName')
+
+        //the next task is the change the text of the button during button click
+        $('button').click(function() {
+            $('button').text("Changed");
+        });
+
+
+
+    </script>
+</body>
+</html>
