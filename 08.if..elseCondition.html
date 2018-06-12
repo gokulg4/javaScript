@@ -1,0 +1,76 @@
+<!--
+    Use the ! symbol with <tab> key to get the html skleton  
+    Date: 03Jun2018
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if..else Statement in JQUery</title>
+</head>
+<body>
+    
+    <!-- It is better to write the script tag at the bottom of the page -->
+    <script>
+        var age = 18;
+
+        if (age > 22)
+            document.write('Your are eligible or voting');
+        else
+            //document.write("You aren't eligible for voting"); //Using double quotes
+            document.write('You aren\'t eligible for voting');  //Using single quotes and escape sequence   
+            
+            //Here we have written the document.write(" ") with double quotes hence there are
+            //are no issues, since our content [aren't] is having a single quote
+
+            //if we mandatorily want to use ' in our document.write then we need to use the escape sequence like aren\'t
+        document.writeln('<br />');
+        //for set of statements need to use { ... }
+        var name = 'Kanna';
+
+        if (name == 'rama') {            
+            document.writeln("<p> I am Rama");
+            document.writeln("<p> I am studying in 4th standard");
+            document.writeln("<p> I am a good boy");
+            document.writeln("<p> My school name is Sri Shankara Vidhyala");
+        }
+        else {
+            document.writeln("<br /> I am Kanna");
+            document.writeln("<br /> I am studying in 2th standard");
+            document.writeln("<br /> I am a good boy");
+            document.writeln("<br /> My school name is Sri Shankara Vishva Vidhyala");
+        }
+
+        //Ternary Operator
+        age = 24;
+        (age > 22) ? document.writeln("<p> You can vote in assembly elections") : document.writeln("<p> You can not vote in assembly elections");
+        //any thing before the question mark is "Condition"
+        //if condition satisfied the statement after ? will be executed
+        //if condition is not satisfied the statemetn after : will be executed (else part)
+
+        var name = "Ganapathy";
+        var age = 24;
+
+        function student(studentName) {
+            console.log('Name of the Student is: ' + studentName);
+            document.writeln('<p> Name of the Student is: ' + studentName);
+        }
+
+        function studentAge(age) {
+            console.log('The age of the student is: ' + age);
+            document.writeln('<p> The age of the student is: ' + age);
+        }
+
+        //when the condition is true
+        (true) ? student(name) : studentAge(age);
+
+        //when the condition is false
+        (false) ? student(name) : studentAge(age);
+
+        //when the true or false condition has more number of statements to be executed, the is good to use the statements inside a function
+    </script>
+</body>
+</html>

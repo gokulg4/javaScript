@@ -1,0 +1,77 @@
+<!--Use ! + <tab> key to get the html template structure -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+
+    <!--Calling JQuery external reference-->
+    <!-- <script src="../jQuery/jquery-3.3.1.min.js"></script> -->
+
+
+    <!-- It is always recommended not use the multiple network connections -->
+
+    <!-- <script src="../jQuery/jquery-3.3.1.min1.js"></script>
+    <script src="../jQuery/jquery-3.3.1.min2.js"></script>
+    <script src="../jQuery/jquery-3.3.1.min3.js"></script>
+    <script src="../jQuery/jquery-3.3.1.min4.js"></script>
+    <script src="../jQuery/jquery-3.3.1.min5.js"></script>
+    <script src="../jQuery/jquery-3.3.1.min6.js"></script>
+    <script src="../jQuery/jquery-3.3.1.min7.js"></script> -->
+</head>
+<body>
+    <!--
+        01. The Syntax of JQuery is much simplified and the official site of
+        JQuery is https://api.jquery.com
+        JQuery is nothing but a javascript library, hence the library needs to
+        be referred in our html document
+
+        02. JQuery is written inside <script> tags. $ is nothing but jQuery. i.e) in
+        each and every place there is no need to write jQuery, just by putting $ it means
+        jQuery.
+
+        03. To use $ a reference needs to be creted. To do that, go to
+        the official web site -- download -- 'Select the compressed production verion
+        jQuery'.
+
+        04. The file https://code.jquery.com/jquery-3.3.1.min.js will be downloaded
+        to the local system
+        The other option is to use the above url directly. Both the options are
+        recommended
+
+        05. Calling/referencing the downloaded jQuery file, which done inside the <head> tag
+            To check if the calling of jQuery is correctly referenced in the project or not, go to Developer tools (F12) -- Network tab
+            Now hit the refresh in the page, "All" should be selected at top, it will display the "jQuery"
+            Suppose if we would have made some incorrect reference to the jQuery, then 404 error will be displayed
+            File with extension src="../jQuery/jquery-3.3.1.min.js1" does not exist, hence we can see the status as 404 (404: represents page not found)
+
+            console.log($);
+    -->
+
+    <!--If cloud CDN is unavailable use the local js file-->
+   
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js1"></script>
+    <script>
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='./jQuery/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+    </script>
+   
+
+    <script>
+        // $ === jQuery (in each and every place no need to write JQuery again and again, just use the $ representation)
+
+        // 05
+        console.log($); // returns: ƒ (e,t){return new w.fn.init(e,t)} -- then no error
+    </script>
+
+    <!-- JQuery is pure java script, calling any predefined function/method will 
+          internal call the java script code which is already written in jQuery.
+         In other terms JQuery is the simplified version of JavaScript
+    -->
+
+</body>
+</html>

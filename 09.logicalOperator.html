@@ -1,0 +1,71 @@
+<!--
+    Use the ! symbol with <tab> key to get the html skleton  
+    Date: 03Jun2018
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Logical Operator</title>
+</head>
+<body>
+    
+    <!-- It is better to use the script tag at the bottom of the page -->
+    <script>
+        //  && (and) logical operator:
+        // to vote he should have age greater that 22 and his nationality should be indian
+        var age = 24;
+        var nationality = 'indian';
+
+        if ((age > 22) && (nationality == 'indian')) {
+            document.write('<p> You can vote');
+        }
+        else {
+            document.write('<p> You can not vote');
+        }
+
+        //writing the above && logical operator using ternary operator
+        ((age > 22) && (nationality == 'indian')) ? document.write('<p> You can vote - ternary') : document.write('<p> You can not vote - ternary');
+
+
+        // || (or) logical operator:
+        // any one of the give condition should be true in OR (||) operator
+        // Condition: if the user is a senior citizen or he should be greater than 18 year eligible for vote
+        //              also he should be an indian citizen
+
+        var userAge = 19;                   // numeric data type
+        var userNationality = 'indian';     // string data type
+        var userIsSeniorCitizen = false;    // boolean data type
+
+        // if user is a SeniorCitizen then no need for checking the user age hence we can use the || operator
+        // one of the given condition is true, then the segment is true -- no need to check the remaining part of the stmt with in brackets
+        if ((userIsSeniorCitizen || userAge > 18) && userNationality == 'indian') {
+            document.writeln('<p> User is eligible to vote');
+        }
+        else {
+            document.writeln('<p> User is not eligible to vote');
+        }      
+
+        //modules Operator
+        //A number divided by another number the remainder is called the module
+
+        console.log('5 Modulus 2 is: ' + 5 % 2);
+        console.log('5 Modulus 5 is: ' + 5 % 5);
+
+        //using the modulus operator we can find, whether the given number is even or odd
+
+        if (10 % 2 == 0) {
+            console.log('The given number is Even');
+            document.writeln('<p> The given number is Even');
+        }
+        else {
+            console.log('The given number is Odd');
+            document.writeln('<p> The given number is Odd');
+        }
+
+    </script>
+</body>
+</html>

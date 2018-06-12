@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Functions</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //Calling the function multiply above the function declaration
+        console.log('Calling the multiply fn above the decleration: ' + multiply(2, 4));
+
+        //Creating a declerative function. Most of the method in JS will be declerative
+        //  (ie. function is declared which can be called at any time)
+        function multiply (x, y){
+            return x * y;
+        }
+
+        //Calling the declared function (here 2 and 4 are the arguments to the function)
+        multiply(2, 4);
+
+        //The output written in the console window will be 8, now what will happen if 
+        //  we put the console.log on top of the function
+        //  then also it will work
+        console.log('Calling the multiply fn below the decleration: ' + multiply(2, 4));
+
+        //In Objects.html we have a object: obj. The function speak, drive and multiply 
+        //  are the same since they are declerative functions
+        var obj = {
+            name: 'name',
+            age: 'age',
+            hobbies: ['reading', 'playing', 'riding'],
+            speak: function() {
+
+            },
+            drive: function() {
+
+            }
+        }
+
+        //Hoisting of function
+
+        //Anything after = is a reference/value and will not be hoisted
+        //Case I:
+        // var someValue = 2;
+        // console.log(someValue);
+        //The output is: 2
+
+        //Case II:
+        // console.log(someValue);
+        // var someValue = 2;
+        //The output is: undefined - this is because immediately after the declaration of 
+        //  variable the name will be hoisted but not the value (reference will not be hoisted)
+        //  the variable 'someValue' is hoisted
+
+        //Case III:
+        // console.log(someValue);
+
+        //This document does not contain the variable someValue hence 'uncaught ReferenceError'
+        
+        //In the above the function - multiply itself is a declaration.
+        //  the name of the function is multiply which will be hoisted, hence calling a 
+        //  function before and after the declaration will work
+        
+        //Also the top of the document window, will have the function 'multiply'
+
+        //Undefined: Declaration is there, the variable is stored in the
+        //  hoisting but value/reference is not there
+
+        //A function in Javascript is written as below
+        function readingPaper() {
+            return "I am reading Times Of India news paper";
+        }
+
+        //Calling a JS function, the open and close paranthesis
+        // are important for calling (then only fn will be
+        //   execuited)
+        readingPaper();
+
+        //Display the output of 
+        console.log(readingPaper());
+
+        console.log(readingPaper);
+
+        //All the above examples display data in console,
+        //  now display data in browser
+        function multiply(x, y) {
+            return x * y;
+        }
+
+        //display the output in console
+        console.log(multiply(2, 4));
+
+        var multiply = multiply(2, 4);
+        //display the output in browser document
+        //This method of writing the data to document 
+        //  browser is not appreciated using JS
+        document.write(multiply);
+
+        //Why to use Function instead of Object
+        var objPer = {
+            name: 'John',
+            standard: 2,
+            isEnglish: true
+        };
+        
+        function student (name, standard, isEnglish){
+            return name + '|' + standard + '|' + isEnglish;
+        }
+
+        //to create 10 student record we need to create 10 objects 
+        //  1 for each student, which is an expensive coding
+        //  whereas in case of function, just call with different
+        //  arguments
+
+        //the below is expensive code, to be avoided
+        var objPerA = {
+            name: 'Peter', standard: 2, isEnglish: true };
+
+        var objPerB = {
+            name: 'Sara', standard: 2, isEnglish: true };
+
+        var objPerC = {
+            name: 'Ethan', standard: 2, isEnglish: false };
+
+        //best approach is to create a declarative method like student
+        // and pass parameter to it
+        student('Peter', 2, true);
+        student('Sara', 2, true);
+        student('Ethan', 2, false);
+
+        //basically with respect to JS to get a good performance, the no of lines
+        // of code should be less
+
+        //Constructor functions or Function constructed method
+        function Person(name, age, car){
+            this.name = name;
+            this.age = age;
+            this.car = car;
+            this.drive = function() {
+                return 'I am driving Honda car';
+            }
+        }
+
+        //In the above constructor method, the name of the function starts with Caps
+        //  representing as a constructor function
+
+        //When the method Person is called, then the method drive will be
+        //  automatically called
+
+        //In JS a function/method is also called as an object, since we are writing with 
+        //  curly braces
+
+        //This constructive method is much like a prototype, which is ideally not be 
+        //  altered/disturbed and can be resused n number of times
+
+        //In JS whatever we write is an object, even the constructor method is also 
+        //  an object
+
+        var objPersonA = new Person('Hello', 22, 'Honda');
+        var objPersonB = new Person('Hari', 24, 'Hyndai');
+        var objPersonC = new Person('Siva', 22, 'Maruthi');
+
+        //Similarly the same member can be called n number of times, the same prototype
+        //  will work
+        console.log(objPersonA);
+        console.log(objPersonB);
+        console.log(objPersonC);
+
+        //Consider an example, where the prototype was desinged in 1990 and it used till 
+        //  today. An update needs to be made to add new property, function to Person
+        //  This can be done either globally or to the specific instance variable
+
+        //We should not go to the code of constructor function and add the property/function
+        //  by adding new property/function, any function written using the function will
+        //  stop functioning
+
+        //There are two options
+        //  using prototype 
+
+        Person.prototype.make = 2004;
+
+        //Since the property make was added to the prototype we can see this property 
+        //  applied to all the function calls
+
+        //i.e. this prototype is applicable to person1 and person2 (i.e. Hari and Siva)
+        //  Since we have written on using the object
+
+        //we have a scenario where the added property should not disturb the entire
+        //  object but should be applicable only to one Person
+        objPersonA.year = 2004;
+
+        //We can see that property year is added only to Person (objPersonA) Hello and 
+        //  not to Hari and Siva
+        console.log(objPersonA);
+        console.log(objPersonB);
+        console.log(objPersonC);
+
+        //Since we have added the function ‘speed’ to prototype of object
+        //   Person it is available in prototype for all the Person
+        //   objects (eg. available to Hello, Siva, Hari)
+        //It not that only property can be added we can even add new methods
+        Person.prototype.speed = function() {
+            return 'Maximum speed is 100 Km/Hr';
+        }
+
+        //Similarly if we need to apply the function to only one person then
+        //Whereas the function ‘speedLimit’ is available only in 
+        //  Hello and not in Siva and Hari
+        objPersonA.speedLimit = function() {
+            return 'Maximum speed limit of this road is 80 Km/Hr';
+        }
+
+        console.log(Person.prototype.speed());
+        console.log(objPersonA.speedLimit());
+    </script>
+</body>
+</html>

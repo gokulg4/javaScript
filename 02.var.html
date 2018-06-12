@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        
+            //to start the live-server (use the command ALT + L O)
+
+            //(//) is used for comments inside js script tag <script> 
+            //var: variable is nothing but to store the values
+
+            //How to declare a variable in js:
+            var obj
+
+            //what all types of values can be stored in a variable (var)
+            var objA = "text"                   //string (it’s a normal text value)
+            var objB = Object('hello', 'world') //before to ES6, an object needs to be declared as this
+            var objC = 1234                     //number type
+            var objD = { 'hello' : 'world' }    //an object data type containing string
+            var objE = [ 1, 2, 3, 4 ]           //an array data type holding integers
+
+            //understanding console.log();
+            var myName = 'india';
+            console.log(myName);
+
+            //+ operator in JS in used for concatenation operation
+            var myName = 'hello';
+            console.log("My name is: " + myName);
+
+           //when to use double and single quotes in JS
+           //if single quotes were used in the above line the single will end before s
+           var myName = 'chennai';
+           console.log("what's your name: " + myName);
+
+           //the single quotes issue can be bypassed using the escape char \
+           console.log('what\'s your name: ' + myName);
+
+           //understanding error’s that are raised in the console
+           //the variable someVariable is not declared any where in the document
+           //*** this line is commented to prevent the error ***
+           // console.log(someVariable);
+
+           //lets create reference for a variable using var
+           //now the error in the console states - undefined
+           //the meaning is there is reference for the variable but value is not defined for the variable
+           var someVariables;
+           console.log(someVariables);
+
+           //scenario2: for undefined error
+           console.log(someVariableA);
+           var someVariableA;
+
+           //Hoisting
+           var car = 'maruthi';
+
+           //in this document we do have reference or declared the name variable, let's it
+           //but there is no reference / undefined error. The output is a null empty value
+           console.log('My name is: ' + name);
+
+
+        </script>
+    </body>
+</html>

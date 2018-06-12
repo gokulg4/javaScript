@@ -1,0 +1,52 @@
+<!-- ! + <tab> Key for the HTML Snippet -->
+<!-- 01:16:00 video 02.2018-02-04 09.27 Meet Now.mp4 -->    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Understanding 'this' in JS</title>
+
+    <!--Calling JQuery external reference-->
+    <script src="../jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <!-- Understanding 'this' in JS -->
+
+    <button>Click Me</button>
+
+    <script>
+
+    /* this particular code segment has relation to hoisting 
+       In hoisting before we declare any object in a page there will be an object called 'window'
+       In a open document if we put 'this' refers to the window object */
+
+    console.log(this);
+    
+    /* In this document we have not declared a variable as name, but if we put this.name
+       then it will refere to the name property in window object which is 
+       window.name. 
+       By default, the name property will not have any value assigned to it. Hence if we 
+       put this.name an empty value will be returned */
+
+    console.log(this.name);
+
+    // this will refer from the container from where it is called
+
+    //Lets use the jQuery here, call the refs. Check jQuery is correctly called/loaded
+    //Lets create a button in the body of the document (below is the syntax of click function)
+    // $('button').click(function() {
+    //     console.log(this);
+    // });
+
+    //Instead of button let’s call the click function of document body
+    $('body').click(function() {
+        console.log(this);
+    });
+
+    </script>
+    
+</body>
+</html>

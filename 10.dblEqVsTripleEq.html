@@ -1,0 +1,49 @@
+<!--
+    Use the ! symbol with <tab> key to get the html skleton  
+    Date: 03Jun2018
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Double Equal to Vs Triple Equal to</title>
+</head>
+<body>
+    
+    <script>
+        // == vs ===
+        // == : Checks only the value
+        // === : Checks the value as well as the type of the data
+
+        var a = 2;
+        var b = 2;
+        
+        if (a == b) {
+            document.writeln('Equal');
+        }
+        else {
+            document.writeln('Not Equal');
+        }
+
+        a = 2;
+        b = '2';
+        document.writeln('<p> typeof(a): ' + typeof(a));
+        document.writeln('<p> typeof(b): ' + typeof(b));
+
+        if (a == b) 
+            document.writeln('<p> Equal');
+        else
+            document.writeln('<p> Not Equal');
+
+        //Same condition if we use === then (along with value data type will also be checked)    
+        if (a === b)
+            document.writeln('<p> Equal');
+        else
+            document.writeln('<p> Not Equal');
+
+    </script>
+</body>
+</html>

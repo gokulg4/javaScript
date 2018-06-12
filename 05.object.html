@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Objects</title>
+</head>
+<body>
+    
+    <!-- Structure of an object -->
+    <script>
+
+        //In this object hobbies is an array
+        // speak and drive are functions (in js even a function is an object)
+        // obj is a variable
+        // data inside the curly braces { } is an object
+        // we have a key, value pair name: 'name', age: 'age' 
+        var obj = {
+            name: 'name',
+            age: 'age',
+            hobbies: ['reading', 'playing', 'riding'],
+            speak: function() {
+
+            },
+            drive: function() {
+
+            }
+        }
+
+        var obj = { };
+        console.log(obj);
+
+        var objA = { name: 'hello', age: 22 };
+        console.log(objA);
+
+        //Object vs Array
+        //{ }    vs [ ]
+
+        //Array: Can store collection of list items, objects
+        //Object: When we describe each item it should be in Object
+        //  here the object 'objStandard' describes an item of the 
+        //  collection present in array
+
+         var arrSchool = [1, 2, 3, 4];
+         var objStandard = { 
+             standard: 1,
+             teacherName: 'Hello',
+             classStrength: 24,
+             isCityCampus: true,
+             republicDayCelebrations: function() {
+
+             }
+         };
+       
+        console.log(arrSchool);
+        console.log(objStandard);
+
+         //another way of declaring an  array of object and numbers         
+         var arrSchoolA = [
+             {
+                 teacherName: 'Hello',
+                 classStrength: 24,
+                 isCityCampus: true,
+                 republicDayCelebrations: function() {
+
+                 }
+            }, 2, 3, 4
+         ];
+         console.log(arrSchoolA);
+
+         //the above representation can be easily represented as
+         var arrSchoolB = [ { }, { }, { } ];
+
+         //Skeleton of a JS object, it will always be in <key,value> pair format
+         //  var objPerson = { 
+         //     key: value,
+         //     key: value
+         //  };
+
+         //Here Gokul is an object, 
+         // eyes, hands etc are properties of Gokul
+         // what I will do (the action) is called as the method (drive, dance)
+         // In object name, eyes, hands are properties and
+         // drive and dance are the methods
+
+         //the object which is seen below is a json structure
+         //json: is nothing but a place to store the data
+         var objPersonA = {
+            name: 'Gokul',
+            eyes: 2,
+            hands: 2,
+            drive: function() {
+
+            },
+            dance: function() {
+
+            }
+         };
+
+         //using the values of an object
+         var objStudentB = {
+             name: 'Hello',
+             standard: 2,
+             isCitySchool: true,
+             reading: function() {
+                return "I am reading";
+             },
+             writing: function() {
+                return "I am writing";
+             },
+             writer: function(value) {
+                 return value;
+             }
+         };
+
+         var display = "My name is: " + objStudentB.name + 
+            " and " + objStudentB.reading();
+        console.log(display);
+
+        //calling an property of the object
+        console.log(objStudentB.standard);
+        
+        //calling a method of the object
+        console.log(objStudentB.writing());
+
+        //calling the method of object and passing parameter
+        console.log(objStudentB.writer("Hello World"));
+
+    </script>
+</body>
+</html>

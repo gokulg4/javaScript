@@ -1,0 +1,46 @@
+<!-- ! + tab (key) to get the entire HTML format -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - Error and Continue</title>
+</head>
+<body>
+    
+    <!-- Javascript Section good practice to have at the bottom of the page -->
+    <script>
+        var strInformation = 'Hello World';
+        console.log(strInformation);
+
+        var iCount = 44;
+        console.log(iCount);
+
+        //undefined message (variable is declared in the dom and 
+        //  moved to hoisting, but value is not assigned)
+        //  execution of the program will continue (it will not stop)
+        var strOperatingSystem;
+        console.log(strOperatingSystem);
+
+        strOperatingSystem = 'IBM - PC DOS';
+        strInformation = 'PC DOS v5.11';
+        console.log(strOperatingSystem);
+        console.log(strInformation);
+                
+        //Uncaught ReferenceError:
+        //------------------------
+
+        //Now call a variable that is not defined in the document
+        console.log(iCounter);
+        //Error - Uncaught ReferenceError: iCounter is not defined at ....
+        //the below lines in the script will not be execuited 
+        //  when 'Uncaught ReferenceError:' is identified
+
+        strInformation = 'Dell is a computer';
+        console.log(strInformation);
+
+    </script>
+</body>
+</html>
+
